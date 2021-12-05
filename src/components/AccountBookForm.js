@@ -1,4 +1,5 @@
 import React, { Component } from "react";
+import './style.css';
 
 // 현재시간을 특정 format의 문자열로 반환
 const getCurrentTimetoString = () => {

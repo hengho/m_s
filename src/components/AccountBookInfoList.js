@@ -1,5 +1,6 @@
 import React, { Component } from "react";
 import AccountBookInfo from "./AccountBookInfo";
+import './style.css';
 
 class AccountBookInfoList extends Component {
   static defaultProps = {

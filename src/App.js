@@ -6,12 +6,14 @@ import AccountBookInfoList from "./components/AccountBookInfoList";
 
 class App extends Component {
   // field
-  currentId = 1;
-
+  currentId = -1;
   state = {
     list: [],
-    keyword: ""
+    keyword: "",
+    currentMoney: 0
   };
+
+  
 
   change = event => {
     this.setState({
@@ -46,7 +48,7 @@ class App extends Component {
   };
 
   render() {
-    const { list, keyword } = this.state;
+    const { list, keyword, currentMoney } = this.state;
     const filteredList = list.filter(
       info => info.usage.indexOf(keyword) !== -1
     );
@@ -56,10 +58,14 @@ class App extends Component {
         <AccountBookForm onAdd={this.add} />
         <p>
           <input
+            className="search"
             placeholder="검색"
             onChange={this.change}
             value={keyword}
           />
+          <div>
+            총 지출: {currentMoney}
+          </div>
         </p>
         <hr />
         <AccountBookInfoList

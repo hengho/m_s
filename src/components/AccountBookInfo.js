@@ -1,4 +1,5 @@
 import React, { Component } from "react";
+import './style.css';
 
 // 현재시간을 특정 format의 문자열로 반환
 const getCurrentTimetoString = () => {
@@ -92,18 +93,13 @@ class AccountBookInfo extends Component {
   }
 
   render() {
-    const style = {
-      border: "1px solid black",
-      padding: "5px",
-      margin: "5px"
-    };
 
     const { editing } = this.state;
 
     // 수정
     if (editing) {
       return (
-        <div style={style}>
+        <div className="style">
           <select
             value={this.state.type}
             name="type"
@@ -126,7 +122,6 @@ class AccountBookInfo extends Component {
             onChange={this.changeInput}
           />
           <button onClick={this.toggleEdit}>적용</button>
-          <button onClick={this.remove}>삭제</button>
         </div>
       );
     }
@@ -135,12 +130,12 @@ class AccountBookInfo extends Component {
     const { type, price, usage, date } = this.props.data;
 
     return (
-      <div style={style}>
-        <div>{type}</div>
-        <div>{toCommaString(price)}원</div>
-        <div>{usage}</div>
-        <div>{date}</div>
-        <button onClick={this.toggleEdit}>수정</button>
+      <div className="style">
+        <div className="text">{type}</div>
+        <div className="text">{toCommaString(price)}원</div>
+        <div className="text">{usage}</div>
+        <div className="text">{date}</div>
+        <button className="update" onClick={this.toggleEdit}>수정</button>
         <button onClick={this.remove}>삭제</button>
       </div>
     );
