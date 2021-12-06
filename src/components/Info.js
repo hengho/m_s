@@ -11,7 +11,7 @@ const toCommaString = num => {
   return num.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",");
 };
 
-class AccountBookInfo extends Component {
+class Info extends Component {
   static defaultProps = {
     data: {
       id: 0,
@@ -142,4 +142,4 @@ class AccountBookInfo extends Component {
   }
 }
 
-export default AccountBookInfo;
+export default Info;

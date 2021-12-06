@@ -1,8 +1,8 @@
 import React, { Component } from "react";
 import "./App.css";
 
-import AccountBookForm from "./components/AccountBookForm";
-import AccountBookInfoList from "./components/AccountBookInfoList";
+import Form from "./components/Form";
+import List from "./components/List";
 
 class App extends Component {
   // field
@@ -55,7 +55,7 @@ class App extends Component {
 
     return (
       <React.Fragment>
-        <AccountBookForm onAdd={this.add} />
+        <Form onAdd={this.add} />
         <p>
           <input
             className="search"
@@ -68,7 +68,7 @@ class App extends Component {
           </div>
         </p>
         <hr />
-        <AccountBookInfoList
+        <List
           list={filteredList}
           onRemove={this.remove}
           onUpdate={this.update}

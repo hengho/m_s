@@ -1,8 +1,8 @@
 import React, { Component } from "react";
-import AccountBookInfo from "./AccountBookInfo";
+import Info from "./Info";
 import './style.css';
 
-class AccountBookInfoList extends Component {
+class List extends Component {
   static defaultProps = {
     list: [],
     onRemove: () => console.warn("onRemove is not defined."),
@@ -16,7 +16,7 @@ class AccountBookInfoList extends Component {
   render() {
     const { list, onRemove, onUpdate } = this.props;
     const infoList = list.map(info => (
-      <AccountBookInfo
+      <Info
         key={info.key}
         data={info}
         onRemove={onRemove}
@@ -28,4 +28,4 @@ class AccountBookInfoList extends Component {
   }
 }
 
-export default AccountBookInfoList;
+export default List;

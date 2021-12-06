@@ -6,7 +6,7 @@ const getCurrentTimetoString = () => {
   return new Date().toLocaleString();
 };
 
-class AccountBookForm extends Component {
+class Form extends Component {
   // error 방지를 위한 기본 값 설정
   static defaultProps = {
     onAdd: () => {
@@ -71,4 +71,4 @@ class AccountBookForm extends Component {
   }
 }
 
-export default AccountBookForm;
+export default Form;
