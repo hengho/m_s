@@ -5,7 +5,6 @@ import Form from "./components/Form";
 import List from "./components/List";
 
 class App extends Component {
-  // field
   currentId = -1;
   state = {
     list: [],
@@ -40,9 +39,9 @@ class App extends Component {
     this.setState({
       list: list.map(
         info =>
-          id === info.id // 현재 수정하는 id를 찾음
-            ? { ...info, ...data } // 새로운 내용(data)으로 덮어씀
-            : info // 기존값 유지
+          id === info.id
+            ? { ...info, ...data }
+            : info
       )
     });
   };
